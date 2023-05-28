@@ -9,6 +9,9 @@ const navbarWidth = ref('w-[calc(100%-15rem)]')   // 預設值(登入後狀態)
 
 navbarWidth.value = isLogin.value ? 'w-full' : navbarWidth
 
+console.log(isLogin);
+console.log(navbarWidth);
+
 </script>
 
 <template>
