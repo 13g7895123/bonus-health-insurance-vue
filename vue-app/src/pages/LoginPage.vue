@@ -16,8 +16,8 @@ const password = ref('')
 
 // 用 axios 傳給後端 php 時，需加這 part
 let params = new URLSearchParams()
-params.append('account', account)
-params.append('password', password)
+params.append('account', account.value)
+params.append('password', password.value)
 
 const loginSubmit = async() => {
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', params)
