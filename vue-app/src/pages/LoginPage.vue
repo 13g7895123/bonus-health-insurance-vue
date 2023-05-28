@@ -1,5 +1,5 @@
 <template>
-    <div class='w-[700px] h-96 mx-auto mt-[10dvh] border-2 border-slate-300 flex shadow-lg'>
+    <div class='w-[700px] h-96 mx-auto mt-[10dvh] border-2 border-slate-300 flex items-center shadow-lg'>
         <div class='w-[calc(100%-16rem)] h-full'>
             <img src='../assets/login_img.png' class='w-auto h-full object-cover object-right'>
         </div>
