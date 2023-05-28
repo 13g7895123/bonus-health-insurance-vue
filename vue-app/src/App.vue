@@ -9,16 +9,15 @@ import NavbarRight from './components/NavbarRight.vue';
 
 const loginStore = useLoginStore()
 const { login } = storeToRefs(loginStore)
-
-console.log('login status: ' + login.value);
-
 const isLogin = login.value                       // 預設為非登入
 const navbarWidth = ref('')                       // 預設值(登入後狀態)
+const contentHeight = ref('')
 
-navbarWidth.value = isLogin ? 'w-[calc(100%-15rem)]' : 'w-full'
+navbarWidth.value = isLogin ? 'w-[calc(100%-15rem)]' : 'w-screen'
+contentHeight.value = isLogin ? 'h-[calc(100%-2.5rem)]' : 'h-screen'
 
 // console.log(isLogin);
-console.log(navbarWidth.value);
+// console.log(navbarWidth.value);
 
 </script>
 
@@ -29,11 +28,11 @@ console.log(navbarWidth.value);
     <!-- right -->
     <div class="flex flex-col" :class="navbarWidth">
       <!-- navbar -->
-      <div v-show="isLogin === true">
+      <div v-show="isLogin === true"> <!-- 多包一層div去除warning -->
         <NavbarRight/>
       </div>
       <!-- content -->
-      <div class="h-[calc(100%-2.5rem)] flex justify-center items-center">
+      <div class="flex justify-center items-center" :class="contentHeight">
         <router-view/>
       </div>
     </div>    
