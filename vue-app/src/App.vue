@@ -29,7 +29,9 @@ console.log(navbarWidth.value);
     <!-- right -->
     <div class="flex flex-col" :class="navbarWidth">
       <!-- navbar -->
-      <NavbarRight v-show="isLogin"/>
+      <div v-show="isLogin === true">
+        <NavbarRight/>
+      </div>
       <!-- content -->
       <div class="h-[calc(100%-2.5rem)] flex justify-center items-center">
         <router-view/>
