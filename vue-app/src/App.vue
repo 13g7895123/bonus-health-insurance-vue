@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useLoginStore } from './stores/login'
+import { storeToRefs } from "pinia"
 import TaskPage from './pages/TaskPage.vue';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
