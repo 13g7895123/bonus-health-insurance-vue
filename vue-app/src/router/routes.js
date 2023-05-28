@@ -3,6 +3,7 @@ import TaskPage from "../pages/TaskPage.vue"
 import AddTaskPage from "../pages/AddTaskPage.vue"
 import TestPage from "../pages/TestPage.vue"
 import szfuPaymentPage from "../pages/szfuPaymentPage.vue"
+import LoginPage from "../pages/LoginPage.vue"
 // import LoginPage from "../pages/LoginPage.vue"
 // import RegisterPage from "../pages/RegisterPage.vue"
 // import SummaryPage from "../pages/SummaryPage.vue"
@@ -10,6 +11,11 @@ import szfuPaymentPage from "../pages/szfuPaymentPage.vue"
 // import DataTablePage from "../pages/DataTablePage.vue"
 
 const routes = [
+    {
+        path: "/",
+        component: LoginPage,
+        name: 'login',
+    },
     {
         path: "/tasks",
         component: TaskPage,

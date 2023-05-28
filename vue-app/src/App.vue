@@ -3,6 +3,9 @@ import TaskPage from './pages/TaskPage.vue';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import NavbarRight from './components/NavbarRight.vue';
+
+// const isLogin = false
+
 </script>
 
 <template>
@@ -19,12 +22,6 @@ import NavbarRight from './components/NavbarRight.vue';
       </div>
     </div>    
   </div>  
-  <!-- <Navbar/> -->
-  <!-- <router-view v-slot="{ Component }" class="max-w-[1280px] mx-auto">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view> -->
 </template>
 
 <style scoped>
