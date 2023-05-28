@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useLoginStore } from '../stores/login'
 import { storeToRefs } from "pinia"
+import axios from 'axios'
 
 const loginStore = useLoginStore()
 const { login } = storeToRefs(loginStore)
@@ -13,8 +14,15 @@ loginBoxMt.value = isLogin ? 'mt-[10dvh]' : 'mt-0'
 const account = ref('')
 const password = ref('')
 
-const loginSubmit = () => {
-    console.log(`${account.value}/${password.value}`);
+// 用 axios 傳給後端 php 時，需加這 part
+let params = new URLSearchParams()
+params.append('account', account)
+params.append('password', password)
+
+const loginSubmit = async() => {
+    axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', params)
+    .then( (response) => console.log(response))
+    .catch( (error) => console.log(error))
 }
 
 </script>
@@ -28,7 +36,7 @@ const loginSubmit = () => {
             <div class='text-2xl font-bold mt-10'>會員登入</div>
             <input v-model="account" class='text-xl text-slate-700 pl-1 pb-1 outline-none border-b-2 border-slate-400 mt-10' placeholder='帳號'>
             <div class='relative flex'>
-                <input v-model="password" class='text-xl pl-1 pb-1 outline-none border-b-2 border-slate-400 mt-5' placeholder='密碼' type='password'>
+                <input v-model="password" class='text-xl text-slate-700 pl-1 pb-1 outline-none border-b-2 border-slate-400 mt-5' placeholder='密碼' type='password'>
                 <img src='../assets/hide.png' id='showPwd' class="w-6 h-6 absolute right-1 bottom-2 animate-3 cursor-pointer">
             </div>
             <div class='w-full mt-10 flex justify-center text-justify'>
