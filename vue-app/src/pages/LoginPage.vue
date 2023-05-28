@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useLoginStore } from './stores/login'
+import { useLoginStore } from '../stores/login'
 import { storeToRefs } from "pinia"
 
 const loginStore = useLoginStore()
