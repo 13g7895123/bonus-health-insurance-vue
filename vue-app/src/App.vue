@@ -1,9 +1,15 @@
 <script setup>
 import { ref } from 'vue'
+import { useLoginStore } from '../stores/login'
 import TaskPage from './pages/TaskPage.vue';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import NavbarRight from './components/NavbarRight.vue';
+
+const loginStore = useLoginStore()
+const { login } = storeToRefs(loginStore)
+
+console.log('login status: ' + login.value);
 
 const isLogin = ref(false)                        // 預設為非登入
 const navbarWidth = ref('')                       // 預設值(登入後狀態)
