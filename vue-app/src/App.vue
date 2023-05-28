@@ -4,7 +4,10 @@ import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import NavbarRight from './components/NavbarRight.vue';
 
-const isLogin = false
+const isLogin = ref(false)                        // 預設為非登入
+const navbarWidth = ref('w-[calc(100%-15rem)]')   // 預設值(登入後狀態)
+
+navbarWidth.value = isLogin.value ? 'w-full' : navbarWidth
 
 </script>
 
@@ -13,7 +16,7 @@ const isLogin = false
     <!-- left -->
     <Sidebar v-show="isLogin"/>
     <!-- right -->
-    <div class="w-[calc(100%-15rem)] flex flex-col">
+    <div class="flex flex-col" :class="navbarWidth">
       <!-- navbar -->
       <NavbarRight v-show="isLogin"/>
       <!-- content -->
