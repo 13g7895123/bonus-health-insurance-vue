@@ -14,7 +14,7 @@ const account = ref('')
 const password = ref('')
 
 const loginSubmit = () => {
-    console.log(`${account}/${password}`);
+    console.log(`${account.value}/${password.value}`);
 }
 
 </script>
