@@ -12,12 +12,12 @@ const { login } = storeToRefs(loginStore)
 
 console.log('login status: ' + login.value);
 
-const isLogin = ref(false)                        // 預設為非登入
+const isLogin = login.value                       // 預設為非登入
 const navbarWidth = ref('')                       // 預設值(登入後狀態)
 
-navbarWidth.value = isLogin.value ? 'w-[calc(100%-15rem)]' : 'w-full'
+navbarWidth.value = isLogin ? 'w-[calc(100%-15rem)]' : 'w-full'
 
-console.log(isLogin.value);
+// console.log(isLogin);
 console.log(navbarWidth.value);
 
 </script>
