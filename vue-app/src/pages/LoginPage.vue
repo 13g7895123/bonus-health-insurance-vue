@@ -8,7 +8,7 @@ const { login } = storeToRefs(loginStore)
 const isLogin = login.value                       // 預設為非登入
 const loginBoxMt = ref('')
 
-loginBoxMt.value = isLogin ? 'mt-0' : 'mt-[10dvh]'
+loginBoxMt.value = isLogin ? 'mt-[10dvh]' : 'mt-0'
 console.log(loginBoxMt.value);
 
 </script>
