@@ -11,3 +11,5 @@ build:
 p:
 	docker exec -it health-insurance sh -c "chmod -R 757 src"
 	chmod -R 757 ./vue-app/src
+push:
+	git push -u origin master
