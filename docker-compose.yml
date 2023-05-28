@@ -1,8 +1,8 @@
 version: "3.4"
 services:
- ass-vue:
+ health-insurance:
    image: node:alpine
-   container_name: ass-vue
+   container_name: health-insurance
    entrypoint: /bin/sh
    ports:
      - 9053:8000
