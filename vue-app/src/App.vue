@@ -8,7 +8,7 @@ import NavbarRight from './components/NavbarRight.vue';
 const isLogin = ref(false)                        // 預設為非登入
 const navbarWidth = ref('')                       // 預設值(登入後狀態)
 
-navbarWidth.value = isLogin.value ? 'w-full' : 'w-[calc(100%-15rem)]'
+navbarWidth.value = isLogin.value ? 'w-[calc(100%-15rem)]' : 'w-full'
 
 console.log(isLogin.value);
 console.log(navbarWidth.value);
