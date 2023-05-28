@@ -6,9 +6,9 @@ import Sidebar from './components/Sidebar.vue';
 import NavbarRight from './components/NavbarRight.vue';
 
 const isLogin = ref(false)                        // 預設為非登入
-const navbarWidth = ref('w-[calc(100%-15rem)]')   // 預設值(登入後狀態)
+const navbarWidth = ref('')                       // 預設值(登入後狀態)
 
-navbarWidth.value = isLogin.value ? 'w-full' : navbarWidth
+navbarWidth.value = isLogin.value ? 'w-full' : 'w-[calc(100%-15rem)]'
 
 console.log(isLogin.value);
 console.log(navbarWidth.value);
