@@ -16,9 +16,6 @@ const contentHeight = ref('')
 navbarWidth.value = isLogin ? 'w-[calc(100%-15rem)]' : 'w-screen'
 contentHeight.value = isLogin ? 'h-[calc(100%-2.5rem)]' : 'h-screen'
 
-// console.log(isLogin);
-// console.log(navbarWidth.value);
-
 </script>
 
 <template>
