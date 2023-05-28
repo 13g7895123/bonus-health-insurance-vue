@@ -1,3 +1,17 @@
+<script setup>
+import { ref } from 'vue'
+import { useLoginStore } from './stores/login'
+import { storeToRefs } from "pinia"
+
+const loginStore = useLoginStore()
+const { login } = storeToRefs(loginStore)
+const isLogin = login.value                       // 預設為非登入
+const loginBoxMt = ref('')
+
+loginBoxMt.value = isLogin ? 'mt-0' : 'mt-[10dvh]'
+
+</script>
+
 <template>
     <div class='w-[700px] h-96 mx-auto mt-[10dvh] border-2 border-slate-300 flex items-center shadow-lg'>
         <div class='w-[calc(100%-16rem)] h-full'>
