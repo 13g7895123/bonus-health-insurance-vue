@@ -25,9 +25,9 @@ const params = {
 }
 
 
-console.log(params);
 
 const loginSubmit = async() => {
+    console.log(params);
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', params)
     .then( (response) => console.log(response))
     .catch( (error) => console.log(error))
