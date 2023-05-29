@@ -35,7 +35,7 @@ const loginSubmit = async() => {
     })
     .then( (response) => {          // 回傳為物件
         if (response.data.success){
-            isLogin = !isLogin
+            login.value = !login.value
             router.push('tasks')
         }else{
             alert(response.data.msg)
