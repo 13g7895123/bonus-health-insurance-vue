@@ -30,8 +30,12 @@ const loginSubmit = async() => {
         'account': account.value,
         'password': password.value
     })
-    .then( (response) => {
-        console.log(response.data.success)
+    .then( (response) => {          // 回傳為物件
+        if (response.data.success){
+
+        }else{
+            alert(response.data.msg)
+        }
     })
     .catch( (error) => console.log(error))
 }
