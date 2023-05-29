@@ -19,16 +19,18 @@ const password = ref('')
 // params.append('account', account.value)
 // params.append('password', password.value)
 
-const params = {
-    'account': account.value,
-    'password': password.value
-}
-
-
+// const params = {
+//     'account': account.value,
+//     'password': password.value
+// }
 
 const loginSubmit = async() => {
     console.log(params);
-    axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', params)
+    axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', 
+    {
+        'account': account.value,
+        'password': password.value
+    })
     .then( (response) => console.log(response))
     .catch( (error) => console.log(error))
 }
