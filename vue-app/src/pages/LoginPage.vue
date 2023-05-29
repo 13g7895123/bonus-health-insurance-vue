@@ -31,6 +31,7 @@ const loginSubmit = async() => {
         'password': password.value
     })
     .then( (response) => {          // 回傳為物件
+        console.log(response);
         if (response.data.success){
 
         }else{
