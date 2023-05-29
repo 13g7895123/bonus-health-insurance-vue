@@ -25,7 +25,7 @@ const password = ref('')
 // }
 
 const loginSubmit = async() => {
-    console.log(params);
+    // console.log(params);
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', 
     {
         'account': account.value,
