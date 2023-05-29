@@ -25,13 +25,12 @@ const password = ref('')
 // }
 
 const loginSubmit = async() => {
-    console.log(account.value);
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', 
     {
         'account': account.value,
         'password': password.value
     })
-    .then( (response) => console.log(response))
+    .then( (response) => console.log(typeof(response)))
     .catch( (error) => console.log(error))
 }
 
