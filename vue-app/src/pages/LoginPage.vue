@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useLoginStore } from '../stores/login'
 import { storeToRefs } from "pinia"
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 
 const loginStore = useLoginStore()
 const { login } = storeToRefs(loginStore)
@@ -24,6 +25,8 @@ const password = ref('')
 //     'password': password.value
 // }
 
+const router = useRouter()
+
 const loginSubmit = async() => {
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', 
     {
@@ -31,9 +34,8 @@ const loginSubmit = async() => {
         'password': password.value
     })
     .then( (response) => {          // 回傳為物件
-        console.log(response);
         if (response.data.success){
-
+            router.push('tasks')
         }else{
             alert(response.data.msg)
         }
