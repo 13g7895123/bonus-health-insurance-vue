@@ -19,6 +19,8 @@ let params = new URLSearchParams()
 params.append('account', account.value)
 params.append('password', password.value)
 
+console.log(params);
+
 const loginSubmit = async() => {
     axios.post('http://139.162.15.125:9090/api/health-insurance/login.php', params)
     .then( (response) => console.log(response))
