@@ -21,11 +21,11 @@ contentHeight.value = isLogin ? 'h-[calc(100%-2.5rem)]' : 'h-screen'
 <template>
   <div class="flex overflow-hidden">
     <!-- left -->
-    <Sidebar v-show="isLogin"/>
+    <Sidebar v-show="login.value "/>
     <!-- right -->
     <div class="flex flex-col" :class="navbarWidth">
       <!-- navbar -->
-      <div v-show="isLogin === true"> <!-- 多包一層div去除warning -->
+      <div v-show="login.value  === true"> <!-- 多包一層div去除warning -->
         <NavbarRight/>
       </div>
       <!-- content -->
