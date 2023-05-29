@@ -30,7 +30,9 @@ const loginSubmit = async() => {
         'account': account.value,
         'password': password.value
     })
-    .then( (response) => console.log(response.data.success))
+    .then( (response) => {
+        console.log(response.data.success)
+    })
     .catch( (error) => console.log(error))
 }
 
